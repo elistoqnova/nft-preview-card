@@ -1,0 +1,168 @@
+:root {
+    --clr-primary-blue: hsl(215, 51%, 70%);
+    --clr-primary-cyan: hsl(178, 100%, 50%);
+
+    --clr-neutral-bg: hsl(217, 54%, 11%);
+    --clr-neutral-card: hsl(216, 50%, 16%);
+    --clr-neutral-line: hsl(215, 32%, 27%);
+    --clr-neutral-white:hsl(0, 0%, 100%);
+
+    --fs-paragraph: 1.125rem;
+
+    --ff-primary: "Outfit", sans-serif;
+}
+
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--clr-neutral-bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff-primary);
+}
+
+.container {
+    background-color: var(--clr-neutral-card);
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    box-shadow: 20px 15px 5px hsla(0, 0%, 2%, 0.4);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-equilibrium {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: cyan;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+.image-container:hover::before {
+    opacity: 0.5; /* Adjust the opacity to your preference */
+    cursor: pointer
+}
+
+.image-container::after {
+    content: url('./icon-view.svg'); /* Path to your icon */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-container:hover::after {
+    opacity: 1;
+    cursor: pointer
+  }
+
+h1 {
+    
+    padding-block: 20px;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+h1 > a {
+    color: var(--clr-neutral-white);
+}
+
+h1 > a:hover {
+    color: var(--clr-primary-cyan);
+}
+
+.info {
+    color: var(--clr-primary-blue);
+    font-weight: 200;
+    opacity: 0.9;
+    padding-bottom: 20px;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--clr-neutral-line);
+}
+
+.ethereum, .clock {
+    display: inline-flex;   
+    gap: 10px;
+    align-items: center;
+    padding-bottom:20px;
+}
+
+.ethereum p {
+    color: var(--clr-primary-cyan);
+}
+
+.clock p {
+    color: var(--clr-primary-blue); ;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-block: 20px 5px;
+}
+
+.author img {
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-neutral-white);
+}
+
+.author p {
+    color: var(--clr-primary-blue);
+}
+
+.author p>span {
+    color: var(--clr-neutral-white);
+}
+
+.author p>span:hover {
+    color: var(--clr-primary-cyan);
+    cursor: pointer;
+}
+
+
+
+
+
+
